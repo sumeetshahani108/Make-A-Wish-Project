@@ -24,18 +24,12 @@ if( $result->num_rows > 0){
             $status = "<label class='label label-danger'> Not Verified</label>";
         }
 
-        $docs = '<button class="btn btn-default button1" data-toggle="modal" data-target="#viewDocs" style="margin-left: 5%">Documents</button>';
+        $docs = '<button class="btn btn-default button1" data-toggle="modal" data-target="#viewDocs" onclick="viewDocs('.$id.')" style="margin-left: 5%">Documents</button>';
 
         $button = '
-         <div class="btn-group">
-         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-	        Action <span class="caret"></span>
-	     </button>
-	     <ul class="dropdown-menu">
-            <li><a type="button" data-toggle="modal" data-target="#editDoctorModal" onclick="editDoctor('.$id.')"> <i class="glyphicon glyphicon-edit"></i> Edit</a></li>
-            <li><a type="button" data-toggle="modal" data-target="#removeDoctorModal" onclick="removeDoctor('.$id.')"> <i class="glyphicon glyphicon-trash"></i> Remove</a></li>
-         </ul>
-        ';
+         <button class="btn btn-default button1" data-toggle="modal" data-target="#editDoctor" onclick="editDoctor('.$id.')">Edit</button>
+         <button class="btn btn-default button1" data-toggle="modal" data-target="#deleteDoctor" onclick="deleteDoctor('.$id.')" style="margin-top: 5%">Delete</button>
+         ';
 
 
         $output['data'][] = array(

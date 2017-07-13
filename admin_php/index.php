@@ -126,13 +126,24 @@
                     <h1>I am Home</h1>
                 </div>
                 <div id="doctor" class="tab-pane fade">
-                    <?php include_once 'admin-doctor.php'; ?>
+                    <?php include_once ('admin-doctor.php') ; ?>
                 </div>
                 <div id="volunteer" class="tab-pane fade">
                     <h1>I am Volunteer</h1>
                 </div>
                 <div id="child" class="tab-pane fade">
-                    <h1>I am Child</h1>
+                    <ul class="nav nav-tabs mypostpills">
+                        <li class="active"><a data-toggle="tab" href="#doctorApproved">Doctor Approved Child's</a></li>
+                        <li><a data-toggle="tab" href="#fulfilWish">Select the wish that can be fulfilled</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="doctorApproved" class="tab-pane fade in active">
+                            <?php include_once ('admin-child.php'); ?>
+                        </div>
+                        <div id="fulfilWish" class="tab-pane fade">
+                            <?php include_once ('admin-child-wish.php'); ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

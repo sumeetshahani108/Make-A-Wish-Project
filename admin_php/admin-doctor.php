@@ -40,7 +40,6 @@
     <!-- bootstrap js -->
     <script src="../assests/bootstrap/js/bootstrap.min.js"></script>
 
-    <script src="../assests/plugins/fileinput/js/plugins/canvas-to-blob.min.js'); ?>" type="text/javascript"></script>
     <script src="../assests/plugins/fileinput/js/plugins/sortable.min.js" type="text/javascript"></script>
     <script src="../assests/plugins/fileinput/js/plugins/purify.min.js" type="text/javascript"></script>
     <script src="../assests/plugins/fileinput/js/fileinput.min.js"></script>
@@ -74,13 +73,122 @@
                             <th>Last Name </th>
                             <th>View Documents</th>
                             <th>Status</th>
-                            <th>Options</th>
+                            <th style="width:15%;">Options</th>
                         </tr>
                         </thead>
                     </table>
                 </div> <!--panel body-->
             </div> <!-- end of panel-->
         </div>
+    </div>
+
+    <div class="modal fade" id="viewDocs" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Certificates of Doctor</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" id="documentImages">
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="editDoctor" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <form class="form-horizontal" id="editDoctorForm" action="php_action/editDoctor.php" method="POST">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title"><i class="fa fa-edit"></i> Edit Doctor Verification</h4>
+                    </div>
+                    <div class="modal-body">
+
+                        <div id="edit-brand-messages"></div>
+
+
+
+                        <div class="edit-doctor-result">
+                            <div class="form-group">
+                                <label for="editDoctorName" class="col-sm-3 control-label">Doctor Name: </label>
+                                <label class="col-sm-1 control-label">: </label>
+                                <div class="col-sm-8">
+                                   <!-- <label for="editDoctorName" class="col-sm-3 control-label" id="editDoctorName"></label> -->
+                                    <input type="text" class="form-control" id="editDoctorName" placeholder="Brand Name" name="editDoctorName" autocomplete="off">
+                                </div>
+                            </div> <!-- /form-group-->
+                            <div class="form-group">
+                                <label for="editDoctorStatus" class="col-sm-3 control-label">Verification Status: </label>
+                                <label class="col-sm-1 control-label">: </label>
+                                <div class="col-sm-8">
+                                    <select class="form-control" id="editDoctorStatus" name="editDoctorStatus">
+                                        <option value="">~~SELECT~~</option>
+                                        <option value="1">Verify</option>
+                                        <option value="0">Do not Verify</option>
+                                    </select>
+                                </div>
+                            </div> <!-- /form-group-->
+                        </div>
+                        <!-- /edit brand result -->
+
+                    </div> <!-- /modal-body -->
+
+                    <div class="modal-footer editDoctorFooter">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+
+                        <button type="submit" class="btn btn-success" id="editDoctorBtn" data-loading-text="Loading..." autocomplete="off"> <i class="glyphicon glyphicon-ok-sign"></i> Save Changes</button>
+                    </div>
+                    <!-- /modal-footer -->
+                </form>
+                <!-- /.form -->
+            </div>
+            <!-- /modal-content -->
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="deleteDoctor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="glyphicon glyphicon-trash"></i> Remove Doctor</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to remove ?</p>
+                </div>
+                <div class="modal-footer removeBrandFooter">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"> <i class="glyphicon glyphicon-remove-sign"></i> Close</button>
+                    <button type="button" class="btn btn-primary" id="removeDoctorBtn" data-loading-text="Loading..."> <i class="glyphicon glyphicon-ok-sign"></i> Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div>
 
     <script src="../custom/js/admin-doctor.js"></script>
