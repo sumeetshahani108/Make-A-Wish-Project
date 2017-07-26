@@ -24,7 +24,7 @@ if( $result->num_rows > 0){
             $status = "<label class='label label-danger'> Not Verified</label>";
         }
 
-        $docs = '<button class="btn btn-default button1" data-toggle="modal" data-target="#viewDocs" onclick="viewDocs('.$id.')" style="margin-left: 5%">Documents</button>';
+        $docs = '<button class="btn btn-default button1" data-toggle="modal" data-target="#viewDocs" onclick="viewDoc('.$id.')" style="margin-left: 5%">Documents</button>';
 
         $button = '
          <button class="btn btn-default button1" data-toggle="modal" data-target="#editDoctor" onclick="editDoctor('.$id.')">Edit</button>

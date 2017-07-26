@@ -11,8 +11,10 @@ $(document).ready(function () {
     });
 });
 
-function viewDocs(doctorId) {
+/*function viewDoc(doctorId) {
+    alert("here");
     if(doctorId){
+        alert("here");
         $.ajax({
             url : 'php_action/fetchDoctorDocuments.php',
             type : 'post',
@@ -27,15 +29,23 @@ function viewDocs(doctorId) {
                    dataType : 'json',
                    success : function (response) {
                         //console.log(response);
-
+                       var temp = 0;
                         $.each(response, function (key, value){
+                            alert("here");
+                           /* var e = "../" + path + "/" +response[key];
+                            console.log(e);
+                            if(temp == 0){
+                                $('#documentImages').append('<div class="item active">' +
+                                    '<img src="' + e + '" alt="Cant Load Images">' +
+                                    '</div>');
+                                temp = 1;
+                            }else{
+                                $('#documentImages').append('<div class="item">' +
+                                    '<img src="' + e + '" alt="Cant Load Images">' +
+                                    '</div>');
+                            }*/
 
-                            var e = "../" + path + "/" +response[key];
-                            //console.log(e);
-                            //$("#documentImage").attr('src',e);
-                            $('#documentImages').append('<div class="item">' +
-                                '<img src="' + e + '" alt="Cant Load Images">' +
-                                '</div>');
+/*
 
                         })
                    }
@@ -45,6 +55,7 @@ function viewDocs(doctorId) {
         });
     }
 }
+*/
 
 function editDoctor(doctorId) {
     if (doctorId){
